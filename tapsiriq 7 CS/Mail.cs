@@ -3,7 +3,7 @@ using System.Net.Mail;
 
 static class Mail
 {
-    public static string DefaultMail { get; set; } = "aqa.akberzade@gmail.com";
+    public static string DefaultMail { get; set; } = "turalinovruzov@gmail.com";
     public static void Send(string to, string message, string subject = "", string from = "someamazingbot2214@gmail.com")
     {
         try
