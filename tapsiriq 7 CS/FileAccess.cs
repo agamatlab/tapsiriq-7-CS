@@ -45,9 +45,9 @@ partial class Program
         User? inUser = new User();
 
         Console.Write("Enter Email: ");
-        inUser.EMail = Console.ReadLine();
+        inUser.EMail = Console.ReadLine() ?? "";
         Console.Write("Enter Password: ");
-        inUser.Password = Console.ReadLine();
+        inUser.Password = Console.ReadLine() ?? "";
         if (userList == null) return null;
 
         foreach (var user in userList)

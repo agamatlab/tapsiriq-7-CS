@@ -90,7 +90,7 @@
                 {
                     char prefix = ' ';
                     if (i++ == choice) { MySetColor(ConsoleColor.DarkGreen, ConsoleColor.Gray); prefix = '◙'; chosenAdmin = admin;chosenPost = post; }
-                    Console.WriteLine($" {prefix} << {post.ShowShortInfo()} >>");
+                    Console.WriteLine($" {prefix} << {post?.ShowShortInfo()} >>");
                     Console.ResetColor();
                 }
             notFound = Convert.ToSByte(ManageChoice(ref choice, answerCount, IsEscape));

@@ -27,7 +27,7 @@
 
     public void CreatePost()
     {
-        string? content = Console.ReadLine();
+        string content = Console.ReadLine() ?? "";
         Post post = new Post(content, DateTime.Now);
         Posts = (Posts != null)
             ? Posts.Append(post).ToArray()
@@ -96,13 +96,13 @@ partial class Program
         Admin inAdmin = new Admin();
 
         Console.Write("Enter Username: ");
-        inAdmin.Username = Console.ReadLine();
+        inAdmin.Username = Console.ReadLine() ?? "";
 
         Console.Write("Enter Password: ");
-        inAdmin.Password = Console.ReadLine();
+        inAdmin.Password = Console.ReadLine() ?? "";
 
         Console.Write("Enter Email: ");
-        inAdmin.EMail = Console.ReadLine();
+        inAdmin.EMail = Console.ReadLine() ?? "";
 
         return inAdmin;
         // File.AppendAllText("admins.txt", JsonSerializer.Serialize(inAdmin) + '\n');
