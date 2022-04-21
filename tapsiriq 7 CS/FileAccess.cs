@@ -37,22 +37,7 @@ partial class Program
         return null;
 
     }
-    public static Admin CreateAdmin()
-    {
-        Admin inAdmin = new Admin();
 
-        Console.Write("Enter Username: ");
-        inAdmin.Username = Console.ReadLine();
-
-        Console.Write("Enter Password: ");
-        inAdmin.Password = Console.ReadLine();
-
-        Console.Write("Enter Email: ");
-        inAdmin.EMail = Console.ReadLine();
-
-        return inAdmin;
-        // File.AppendAllText("admins.txt", JsonSerializer.Serialize(inAdmin) + '\n');
-    }
 
     public static User? SignInUser(User?[] userList)
     {
@@ -70,24 +55,5 @@ partial class Program
         return null;
 
     }
-    public static User CreateUser()
-    {
-        User inUser = new User();
 
-        Console.Write("Enter Name: ");
-        inUser.Name = Console.ReadLine();
-
-        Console.Write("Enter Surname: ");
-        inUser.Surname  = Console.ReadLine();
-
-        Console.Write("Enter Email: ");
-        inUser.EMail = Console.ReadLine();
-
-        Console.Write("Enter Password: ");
-        inUser.Password = Console.ReadLine();
-
-
-        return inUser;
-        // File.AppendAllText("users.txt", JsonSerializer.Serialize(inUser) + '\n');
-    }
 }

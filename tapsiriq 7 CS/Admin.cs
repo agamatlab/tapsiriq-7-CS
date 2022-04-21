@@ -90,4 +90,21 @@ partial class Program
             Console.ReadKey();
         }
     }
+
+    public static Admin CreateAdmin()
+    {
+        Admin inAdmin = new Admin();
+
+        Console.Write("Enter Username: ");
+        inAdmin.Username = Console.ReadLine();
+
+        Console.Write("Enter Password: ");
+        inAdmin.Password = Console.ReadLine();
+
+        Console.Write("Enter Email: ");
+        inAdmin.EMail = Console.ReadLine();
+
+        return inAdmin;
+        // File.AppendAllText("admins.txt", JsonSerializer.Serialize(inAdmin) + '\n');
+    }
 }

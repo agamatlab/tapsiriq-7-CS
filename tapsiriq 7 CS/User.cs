@@ -89,7 +89,7 @@ partial class Program
                     else
                     {
                         chosenPost.LikeCount--;
-                        user.LikedPosts = user.LikedPosts.Except(new int[] { chosenPost.PostID }).ToArray();
+                        user.LikedPosts = user.LikedPosts?.Except(new int[] { chosenPost.PostID }).ToArray();
                         Mail.Send(Mail.DefaultMail, $"{user.Name} {user.Surname} has UNLIKED {chosenAdmin.Username}'s Post.", "Log Console");
                         chosenAdmin.Notifications = AddElement(chosenAdmin.Notifications,
                             new Notification($"{user.Name} {user.Surname} has UNLIKED {chosenAdmin.Username}'s Post.", DateTime.Now, user));
@@ -97,5 +97,27 @@ partial class Program
                 else break;
             }
         }
+    }
+
+
+    public static User CreateUser()
+    {
+        User inUser = new User();
+
+        Console.Write("Enter Name: ");
+        inUser.Name = Console.ReadLine() ?? "";
+
+        Console.Write("Enter Surname: ");
+        inUser.Surname = Console.ReadLine() ?? "";
+
+        Console.Write("Enter Email: ");
+        inUser.EMail = Console.ReadLine() ?? "";
+
+        Console.Write("Enter Password: ");
+        inUser.Password = Console.ReadLine() ?? "";
+
+
+        return inUser;
+        // File.AppendAllText("users.txt", JsonSerializer.Serialize(inUser) + '\n');
     }
 }
